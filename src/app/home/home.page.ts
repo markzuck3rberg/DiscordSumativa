@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { BusquedaPage } from '../busqueda/busqueda.page';
+import { ModalController } from '@ionic/angular';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -7,6 +8,13 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private modalController: ModalController) {}
 
+  async abrirModal() {
+    const modal = await this.modalController.create({
+      component: BusquedaPage, // Nombre de tu página modal
+      componentProps: { }
+    });
+    return await modal.present();
+  }
 }

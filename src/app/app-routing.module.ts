@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'pagina2',
+    loadChildren: () => import('./chat/pagina2/pagina2.module').then( m => m.Pagina2PageModule)
+  },
+  {
+    path: 'busqueda',
+    loadChildren: () => import('./busqueda/busqueda.module').then( m => m.BusquedaPageModule)
+  },
 ];
 
 @NgModule({

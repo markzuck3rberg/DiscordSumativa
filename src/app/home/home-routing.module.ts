@@ -6,6 +6,12 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage,
+    children: [
+      {
+        path:"",
+        loadChildren:()=>import("../busqueda/busqueda.module").then(m=>m.BusquedaPageModule)
+      }
+    ]
   }
 ];
 
